@@ -1,0 +1,19 @@
+---
+driver:
+  name: vagrant
+  driver_config:
+    config_ssh_timeout: 300
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: install_source
+    run_list:
+
+      - recipe[imagemagick::install_source]
+
+    attributes:
