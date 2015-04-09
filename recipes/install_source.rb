@@ -21,6 +21,23 @@ include_recipe "build-essential"
 
 src_filepath  = "#{Chef::Config['file_cache_path'] || '/tmp'}/#{::File.basename(node['imagemagick']['source']['url'])}"
 
+package "libbz2-1.0"
+package "libfftw3-3"
+package "libfontconfig1"
+package "libfreetype6"
+package "libgomp1"
+package "libjasper1"
+package "libjbig0"
+package "libjpeg8"
+package "liblcms2-2"
+package "liblqr-1-0"
+package "libltdl7"
+package "liblzma5"
+package "libpng12-0"
+package "libxext6"
+package "libxml2"
+package "zlib1g"
+
 remote_file node['imagemagick']['source']['url'] do
   path src_filepath
   checksum node['imagemagick']['source']['checksum']
